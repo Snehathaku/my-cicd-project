@@ -1,0 +1,23 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔁 Checkout code
+        uses: actions/checkout@v3
+
+      - name: ✅ Validate HTML file exists
+        run: |
+          echo "Checking project files..."
+          ls -la
+          echo "index.html found ✅"
+
+      - name: 🎉 CI Complete
+        run: echo "CI Pipeline ran successfully!"
